@@ -1,8 +1,8 @@
 from flask_apscheduler import APScheduler
-from app import app
-from db_schema import db, Performance
 import psutil
 from datetime import datetime
+from app import app
+from database import db, Performance
 
 scheduler = APScheduler()
 
@@ -19,15 +19,3 @@ def save_performance():
 
 scheduler.init_app(app)
 scheduler.start()
-
-# @scheduler.task("interval", id="check_cpu_usage", seconds=10, misfire_grace_time=900)
-# check_cpu_usage():
-#     print(psutil.cpu_percent())
-# @scheduler.task("cron", id="do_job_3", week="*", day_of_week="sun")
-# def job3():
-#     print("Job 3 executed")
-
-
-# __all__ = [
-#     "scheduler"
-# ]

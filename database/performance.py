@@ -1,12 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float
-from app import db, ma
-
-
-class User(db.Model):
-    __tablename__ = 'users'
-    id = Column(Integer, primary_key=True)
-    username = Column(String, unique=True)
-    pw_hash = Column(String)
+from app import ma
+from database import db
 
 
 class Performance(db.Model):
@@ -18,17 +12,10 @@ class Performance(db.Model):
     disk_usage = Column(Float)
 
 
-class UserSchema(ma.Schema):
-    class Meta:
-        fields = ('id', 'username', 'pw_hash')
-
-
 class PerformanceSchema(ma.Schema):
     class Meta:
         fields = ('id', 'date', 'memory_usage', 'CPU_usage', 'disk_usage')
 
 
-user_schema = UserSchema()
-users_schema = UserSchema(many=True)
 performance_schema = PerformanceSchema()
 performances_schema = PerformanceSchema(many=True)
