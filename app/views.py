@@ -88,7 +88,7 @@ def notes(id: int = None):
         notes_list = Note.query.all()
         return jsonify(notes=notes_schema.dump(notes_list))
     note = Note.query.filter_by(id=id).first()
-    if user:
+    if note:
         return jsonify(note=note_schema.dump(note))
     else:
         return jsonify(message='There is no note with that id'), 404
@@ -138,7 +138,7 @@ def params(id: int = None):
     if parameters:
         return jsonify(performance=performance_schema.dump(parameters))
     else:
-        return jsonify(message='There is no parameters with that id'), 404
+        return jsonify(message='There are no parameters with that id'), 404
 
 
 @app.route('/delete_params/<int:id>/', methods=['DELETE'])
@@ -149,4 +149,4 @@ def delete_params(id):
         db.session.commit()
         return jsonify(message='You deleted parameters from ' + parameters.date + ' !'), 202
     else:
-        return jsonify(message='There is no parameters with that id'), 404
+        return jsonify(message='There are no parameters with that id'), 404

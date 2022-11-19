@@ -12,3 +12,7 @@ class Config:
     JWT_COOKIE_CSRF_PROTECT = False
     DEBUG = True
     TESTING = False
+
+
+class TestingConfig(Config):
+    TESTING = True
