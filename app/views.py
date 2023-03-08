@@ -31,7 +31,7 @@ def register():
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('base.html')
+        return render_template('login.html')
 
     if request.is_json:
         username = request.json['login']
@@ -150,3 +150,8 @@ def delete_params(id):
         return jsonify(message='You deleted parameters from ' + parameters.date + ' !'), 202
     else:
         return jsonify(message='There are no parameters with that id'), 404
+
+
+@app.route('/search_note/', methods=['GET'])
+def search_note():
+    return render_template('notes.html')

@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% block head %}
     <meta charset="UTF-8">
-    <title> Rest API template </title>
+    <title> CracowPubs </title>
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
-  {% block head %}{% endblock %}
+    {% endblock %}
 </head>
 <body>
-    <form action = "{{url_for('login')}}"  method = "POST">
-        <p>Enter username:</p>
-        <label for='login'></label><input type='text' name='login' id='login' placeholder='login'/>
-        <p>Enter password:</p>
-        <label for='password'></label><input type='password' name='password' id='password' placeholder='password'/>
-        <p><input type='submit' name='submit'/></p>
-    </form>
-     <form action = "{{url_for('register')}}"  method = "GET">
-        <p><input type = "submit" value = "Click to register" /></p>
-    </form>
+
+{% block menu %}
+<script src="{{url_for('static', filename='index.js')}}"></script>
+
+    <div class="topnav">
+        <a href="{{url_for('register')}}"> LOGIN </a>
+        <a href="{{url_for('login')}}"> REGISTER </a>
+        <a href="{{url_for('search_note')}}"> NOTES </a>
+    </div>
+
+{% endblock %}
+
+{% block body %}
+
+{%  endblock %}
 </body>
 </html>

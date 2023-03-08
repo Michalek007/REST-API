@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block menu %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+<body>
+
+    <p id="note"> Search for note </p>
+    <label class="box" for='search'></label><input class="white_text" type='text' id='search' placeholder='id '/>
+    <button class="white_text" type='button' onclick="get_note()">submit</button>
+
+    <p id="add_message"> Add note </p>
+    <label class="box" for='add'></label><input class="white_text" type='text' id='add' placeholder='note '/>
+    <button class="white_text" type='button' onclick="add_note()">add</button>
+
+    <p id="delete_message"> Delete note </p>
+    <label class="box" for='delete'></label><input class="white_text" type='text' id='delete' placeholder='id '/>
+    <button class="white_text" type='button' onclick="delete_note()">delete</button>
+
+    <p id="update_message"> Update note </p>
+    <label class="box" for='update_id'></label><input class="white_text" type='text' id='update_id' placeholder='id '/>
+    <label class="box" for='update_note'></label><input class="white_text" type='text' id='update_note' placeholder='note '/>
+    <button class="white_text" type='button' onclick="update_note()">update</button>
+
+    <div>
+        <button class="white_text" type='button' onclick="save_note()">save</button>
+        <button class="white_text" type='button' onclick="display_note()">display</button>
+    </div>
+</body>
+{% endblock %}
+</html>
