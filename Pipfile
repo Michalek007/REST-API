@@ -12,6 +12,7 @@ flask-sqlalchemy = "*"
 flask-marshmallow = "*"
 psutil = "*"
 flask-apscheduler = "*"
+gevent = "*"
 
 [dev-packages]
 

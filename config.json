@@ -1,0 +1,19 @@
+{
+  "metadata" : {
+        "VERSION": "0.9.5",
+        "PROJECT_NAME": "REST-API-template",
+        "BUILD": "0",
+        "AUTHOR": "Michał Nizioł"
+  },
+  "options" : {
+        "RUN_FILE": "\\run.bat",
+        "VENV_SETUP_FILE": "\\venvSetup.bat",
+        "PYTHON_REQUIRES": ">=3.8"
+  },
+  "classifiers" : [
+        "Programming Language :: Python :: 3.8",
+        "Operating System :: Microsoft :: Windows",
+        "Framework :: Flask",
+        "Natural Language :: English"
+  ]
+}
