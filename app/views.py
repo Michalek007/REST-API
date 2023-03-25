@@ -1,3 +1,4 @@
+import flask_jwt_extended
 from flask import render_template, url_for, request, redirect, jsonify
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from flask_jwt_extended import set_access_cookies, unset_jwt_cookies
