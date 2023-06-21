@@ -8,6 +8,4 @@
 
 call ".venv\Scripts\activate.bat"
 
-start run_client.py
-
 server.py
